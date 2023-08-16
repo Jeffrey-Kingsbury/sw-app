@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: 'distant galaxy symbols';
+	src: local('SF_Distant_Galaxy_Symbols_Revised'), url(./assets/fonts/SF_Distant_Galaxy_Symbols_Revised.ttf) format('truetype');
+  }
+
+.dgs_font {
+    font-family: 'distant galaxy symbols';
+    font-weight: 100;
+    font-size: 2rem;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(./assets/images/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 100%;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 50%;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
+.loading_icon{
+    transition: all 0.5s ease-in-out;
+    animation: pulse 1s infinite;
+    background-image: url(./assets/images/star_wars_logo.png);
+
+}
+
+@media (prefers-color-scheme: light) {
+    .loading_icon{
+        background-image: url(./assets/images/rebel_emblem.png)!important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .loading_icon{
+        background-image: url(./assets/images/imperial_emblem.png)!important;
+    }
+}
