@@ -1,0 +1,45 @@
+
+@keyframes pulse {
+    0% {
+        opacity: 30%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 30%;
+    }
+}
+
+.wrapper{
+    transition: all 0.5s ease-in-out;
+    animation: pulse 1.5s infinite;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    font-family: "star wars jedi";
+    user-select: none;
+}
+
+.loading_icon{
+    height: 200px;
+    content: url('../../assets/images/star_wars_logo.png');
+}
+
+@media (prefers-color-scheme: light) {
+    .loading_icon{
+        content: url('../../assets/images/rebel_emblem.png')!important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .loading_icon{
+        content: url('../../assets/images/imperial_emblem.png')!important;
+    }
+}
