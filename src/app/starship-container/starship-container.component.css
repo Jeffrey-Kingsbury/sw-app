@@ -5,7 +5,7 @@
   justify-content: flex-start;
   border: 2px solid black;
   width: 400px;
-  height: 200px;
+  min-height: 200px;
   padding: 1rem;
   margin: 1rem;
   border-radius: 5px;
@@ -41,6 +41,7 @@
   margin: 0;
   padding: 0;
 }
+
 .dgs_font {
     font-family: "distant galaxy symbols"!important;
     font-weight: 100;

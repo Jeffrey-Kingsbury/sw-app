@@ -1,6 +1,7 @@
 <div class="wrapper">
   <h1 class="title">{{ details.name }}</h1>
-  <h2 class="subtitle">{{ details.manufacturer }}</h2>
+  <h2 class="subtitle">Model: {{ details.model }}</h2>
+  <h2 class="subtitle">Manufacturer: {{ details.manufacturer }}</h2>
   <span class="cost">
     Price:
     <span *ngIf="isNum(details.cost_in_credits)">

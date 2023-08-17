@@ -1,10 +1,8 @@
 <div class="wrapper">
     <div>
-        <app-loading *ngIf="loading"></app-loading>
+        <app-loading *ngIf="swapiService.loading_starships && swapiService.loading_people"></app-loading>
     </div>
-<div class="containerWrapper" *ngIf="!loading">
-    <div *ngFor="let item of starShips">
-        <app-starship-container [details]="item"></app-starship-container>
-    </div>
+<div class="containerWrapper" *ngIf="!swapiService.loading_starships && !swapiService.loading_people">
+    <router-outlet></router-outlet>
 </div>
 </div>
