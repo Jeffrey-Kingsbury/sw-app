@@ -1,6 +1,7 @@
+<app-header *ngIf="!swapiService.loading_starships && !swapiService.loading_people"></app-header>
 <div class="wrapper">
     <div>
-        <app-loading *ngIf="swapiService.loading_starships && swapiService.loading_people"></app-loading>
+        <app-loading *ngIf="swapiService.loading_starships || swapiService.loading_people"></app-loading>
     </div>
 <div class="containerWrapper" *ngIf="!swapiService.loading_starships && !swapiService.loading_people">
     <router-outlet></router-outlet>
