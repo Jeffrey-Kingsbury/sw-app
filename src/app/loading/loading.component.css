@@ -12,8 +12,6 @@
 }
 
 .wrapper{
-    transition: all 0.5s ease-in-out;
-    animation: pulse 1.5s infinite;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -27,11 +25,35 @@
     user-select: none;
 }
 
+.animated{
+    margin: 1rem;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    animation: pulse 1.5s infinite;
+    position: relative;
+}
+
 .loading_icon{
     height: 200px;
     content: url('../../assets/images/star_wars_logo.png');
 }
 
+p{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: white;
+    user-select: none;
+    font-style: italic;
+    text-align: center;
+    max-width: 50%;
+}
 @media (prefers-color-scheme: light) {
     .loading_icon{
         content: url('../../assets/images/rebel_emblem.png')!important;
