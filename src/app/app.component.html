@@ -1,3 +1,6 @@
 <div>
-<app-loading></app-loading>
+<app-loading *ngIf="loading"></app-loading>
+</div>
+<div *ngIf="!loading">
+    <router-outlet></router-outlet>
 </div>

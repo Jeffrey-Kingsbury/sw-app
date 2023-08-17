@@ -11,7 +11,8 @@ export class AppComponent {
   starShips: any[] = [];
   pilots: Set<string> = new Set();
   pilotDetails: any[] = [];
-
+  loading: boolean = true;
+  
   constructor(private swapiService: SwapiService) {}
 
   ngOnInit() {
@@ -36,6 +37,7 @@ export class AppComponent {
               .getPilots(pilot)
               .then((response) => {
                 this.pilotDetails.push(response.data);
+                this.loading = false;
               })
               .catch((error) => {
                 console.error('Error fetching pilots:', error);
