@@ -1,1 +1,18 @@
-<p>test</p>
+<div class="wrapper">
+  <h1 class="title">{{ details.name }}</h1>
+  <h2 class="subtitle">{{ details.manufacturer }}</h2>
+  <span class="cost">
+    Price:
+    <span *ngIf="isNum(details.cost_in_credits)">
+      <p class="dgs_font">$</p>
+      {{
+        isNum(details.cost_in_credits)
+          ? (details.cost_in_credits | number : "1.0-0")
+          : details.cost_in_credits
+      }}
+    </span>
+    <span *ngIf="!isNum(details.cost_in_credits)">
+      {{ details.cost_in_credits }}
+    </span>
+  </span>
+</div>

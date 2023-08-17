@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingComponent } from './loading/loading.component';
 import { StarshipContainerComponent } from './starship-container/starship-container.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoadingComponent,
-    StarshipContainerComponent
+    StarshipContainerComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

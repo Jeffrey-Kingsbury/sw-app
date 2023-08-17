@@ -12,11 +12,13 @@ export class AppComponent {
   pilots: Set<string> = new Set();
   pilotDetails: any[] = [];
   loading: boolean = true;
-  
+  error: boolean = false;
+  errorMessage: string = '';
   constructor(private swapiService: SwapiService) {}
 
   ngOnInit() {
-    this.getAllStarShips(1);
+  this.getAllStarShips(1);
+  this.getAllPeople(1);
   }
 
   getAllStarShips(page: number) {
@@ -31,22 +33,35 @@ export class AppComponent {
         });
         if (response.data.next) {
           this.getAllStarShips(++page);
-        } else {
-          for (let pilot of this.pilots) {
-            this.swapiService
-              .getPilots(pilot)
-              .then((response) => {
-                this.pilotDetails.push(response.data);
-                this.loading = false;
-              })
-              .catch((error) => {
-                console.error('Error fetching pilots:', error);
-              });
-          }
-        }
+        } 
       })
       .catch((error) => {
+        this.error = true;
+        this.errorMessage = error;
         console.error('Error fetching starships:', error);
       });
   }
+
+  getAllPeople(page: number) {
+    this.swapiService
+      .getPeople(page)
+      .then((response) => {
+        response.data.results.forEach((person: any) => {
+          if (this.pilots.has(person.url)) {
+            this.pilotDetails.push(person);
+          }
+        });
+        if (response.data.next) {
+          this.getAllPeople(++page);
+        } else {
+          this.loading = false;
+        }
+      })
+      .catch((error) => {
+        this.error = true;
+        this.errorMessage = error;
+        console.error('Error fetching people:', error);
+      });
+  }
+
 }

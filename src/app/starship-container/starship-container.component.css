@@ -1,0 +1,60 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 2px solid black;
+  width: 400px;
+  height: 200px;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+
+  &:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  &:active{
+    transform: scale(.98);
+    box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+.title{
+  font-size: 2rem;
+  font-family: 'star wars jedi hollow';
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+}
+
+.subtitle{
+  font-family: 'monospace';
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+.dgs_font {
+    font-family: "distant galaxy symbols"!important;
+    font-weight: 100;
+    display: inline;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+.cost{
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+

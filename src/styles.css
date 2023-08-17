@@ -10,17 +10,19 @@
   src: local("Starjedi"), url(./assets/fonts/Starjedi.ttf) format("truetype");
 }
 
-.dgs_font {
-  font-family: "distant galaxy symbols";
-  font-weight: 100;
-  font-size: 2rem;
-  display: inline;
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: "star wars jedi hollow";
+  src: local("Starjhol"), url(./assets/fonts/Starjhol.ttf) format("truetype");
 }
 
 body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
   background-image: url(./assets/images/background.jpg);
-  background-size: cover;
   background-position: center;
-}
+  background-repeat: no-repeat;
+  background-size: cover;
+} 

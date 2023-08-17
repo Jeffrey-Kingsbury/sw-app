@@ -11,7 +11,7 @@ export class SwapiService {
     return axios.get('https://swapi.dev/api/starships/?page=' + page);
   }
 
-  getPilots(pilot:string){
-    return axios.get(pilot);
+  getPeople(person:number){
+    return axios.get('https://swapi.dev/api/people/?page=' + person);
   }
 }
