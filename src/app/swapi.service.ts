@@ -20,7 +20,7 @@ export class SwapiService {
   getStarShips(page:number = 1) {
     axios.get('https://swapi.dev/api/starships/?page=' + page)
     .then((response) => {
-      this.starships.push(response.data.results);
+      this.starships.push(...response.data.results);
       if (response.data.next) {
         this.getStarShips(page + 1);
       } else{
@@ -40,7 +40,7 @@ export class SwapiService {
     }
     axios.get('https://swapi.dev/api/people/?page=' + page)
     .then((response) => {
-      this.people.push(response.data.results);
+      this.people.push(...response.data.results);
       if (response.data.next) {
         this.getPeople(page + 1);
       } else{
