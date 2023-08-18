@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { Router } from '@angular/router';
+import { People, Starship } from './interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,8 @@ export class SwapiService {
   loading_people = true;
   error = false;
   errorMessage = '';
-  starships: any[] = [];
-  people: any[] = [];
+  starships: Starship[] = [];
+  people: People[] = [];
 
   constructor(private router: Router) {
     this.getStarShips();

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { SwapiService } from '../swapi.service';
 import { Starship, People } from '../interfaces';
 
@@ -16,7 +16,8 @@ export class PeopleDetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private swapiService: SwapiService
+    private swapiService: SwapiService,
+    private router: Router
   ) {}
 
   getPeopleDetails(name: string) {
@@ -24,8 +25,13 @@ export class PeopleDetailsComponent {
       (person) => person.name === name
     );
 
-    if (details?.starships.length > 0) {
-      details.starships.forEach((url: string) => {
+    if(details === undefined){
+      this.router.navigate(['/error']);
+      return {} as People;
+    }
+
+    if (details!.starships.length > 0) {
+      details!.starships.forEach((url: string) => {
         const starship = this.swapiService.starships.find(
           (starship) => starship.url === url
         );

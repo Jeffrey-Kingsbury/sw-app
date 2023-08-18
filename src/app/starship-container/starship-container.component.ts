@@ -7,8 +7,8 @@ import { Starship } from '../interfaces';
   styleUrls: ['./starship-container.component.css'],
 })
 export class StarshipContainerComponent {
-  isNum(value: any): boolean {
-    return !isNaN(parseFloat(value)) && isFinite(value);
+  isNum(value: number | string): boolean {
+    return typeof value === 'number';
   }
 
   @Input() details!: Starship;

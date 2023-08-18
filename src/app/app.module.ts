@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,15 +31,6 @@ import { PeopleDetailsComponent } from './people-details/people-details.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'starships', component: StarshipsListComponent },
-      { path: 'starships/:starshipname', component: StarshipDetailsComponent },
-      { path: 'people', component: PeopleListComponent },
-      { path: 'people/:personname', component: PeopleDetailsComponent },
-      { path: '', redirectTo: 'starships', pathMatch: 'full' }, // redirects to landing page
-      { path: '**', component: ErrorComponent },
-      { path: 'error', component: ErrorComponent },
-    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

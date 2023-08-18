@@ -7,9 +7,7 @@
     <span *ngIf="isNum(details.cost_in_credits)">
       <p class="dgs_font">$</p>
       {{
-        isNum(details.cost_in_credits)
-          ? (details.cost_in_credits | number : "1.0-0")
-          : details.cost_in_credits
+          (details.cost_in_credits | number : "1.0-0")
       }}
     </span>
     <span *ngIf="!isNum(details.cost_in_credits)">
