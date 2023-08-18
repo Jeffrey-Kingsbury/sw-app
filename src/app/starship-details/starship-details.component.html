@@ -23,5 +23,13 @@
         <p>Consumables: {{starshipDetails.consumables}}</p>
         <p>Hyperdrive rating: {{starshipDetails.hyperdrive_rating}}</p>
         <p>MGLT: {{starshipDetails.MGLT}}</p>
+        
+        <div class="pilots" *ngIf="starshipDetails.pilots.length > 0">
+            <h3>Pilots</h3>
+            <ul>
+                <li *ngFor="let pilot of pilots">
+                    {{pilot.name}}
+                </li>
+            </ul>
     </div>
 </div>
