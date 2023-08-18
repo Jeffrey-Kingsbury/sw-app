@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwapiService } from '../swapi.service';
 
 @Component({
   selector: 'app-people-list',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./people-list.component.css']
 })
 export class PeopleListComponent {
+  constructor(public swapiService: SwapiService) {}
 
 }

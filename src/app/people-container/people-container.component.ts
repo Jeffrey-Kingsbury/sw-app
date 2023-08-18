@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { People } from '../interfaces';
 
 @Component({
   selector: 'app-people-container',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./people-container.component.css']
 })
 export class PeopleContainerComponent {
-
+  @Input() details!: People;
 }

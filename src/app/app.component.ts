@@ -9,9 +9,4 @@ import { SwapiService } from './swapi.service';
 export class AppComponent {
   title = 'sw-app';
   constructor(public swapiService: SwapiService) {}
-
-  ngOnInit() {
-
-  }
-
 }

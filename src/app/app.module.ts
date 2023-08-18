@@ -39,6 +39,7 @@ import { PeopleDetailsComponent } from './people-details/people-details.componen
       { path: 'people/:personname', component: PeopleDetailsComponent },
       { path: '', redirectTo: 'starships', pathMatch: 'full' }, // redirects to landing page
       { path: '**', component: ErrorComponent },
+      { path: 'error', component: ErrorComponent },
     ]),
   ],
   providers: [],

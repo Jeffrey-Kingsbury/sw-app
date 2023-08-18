@@ -1,1 +1,4 @@
-<p>people-container works!</p>
+<div class="wrapper" [routerLink]="['/people', details.name]">
+    <h1 class="title">{{ details.name }}</h1>
+    <h2 class="subtitle">Gender: {{ details.gender }}</h2>
+</div>

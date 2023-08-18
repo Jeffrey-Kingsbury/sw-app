@@ -1,1 +1,27 @@
-<p>people-details works!</p>
+<div class="wrapper">
+  <div class="container">
+    <div class="header">
+      <h1 class="title">{{ peopleDetails.name }}</h1>
+      <h2 class="subtitle">Gender: {{ peopleDetails.gender }}</h2>
+    </div>
+    <div class="details">
+      <p>Height: {{ peopleDetails.height }}</p>
+      <p>
+        Mass: {{ peopleDetails.mass }} Mph
+      </p>
+      <p>Hair color: {{ peopleDetails.hair_color }}</p>
+      <p>Skin color: {{ peopleDetails.skin_color }}</p>
+      <p>Eye color: {{ peopleDetails.eye_color }}L</p>
+      <p>Birth year: {{ peopleDetails.birth_year }}</p>
+    </div>
+
+    <div *ngIf="peopleDetails.starships.length > 0">
+      <h3>Known starships:</h3>
+      <ul>
+        <li *ngFor="let starship of starships">
+          <a [routerLink]="['/starships', starship.name]">{{ starship.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
