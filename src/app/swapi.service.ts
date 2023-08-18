@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { Router } from '@angular/router';
+import { Starship, People } from './interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SwapiService {
-  loading_starships: boolean = true;
-  loading_people: boolean = true;
-  error: boolean = false;
-  errorMessage: string = '';
+  loading_starships = true;
+  loading_people = true;
+  error = false;
+  errorMessage = '';
   starships: any[] = [];
   people: any[] = [];
 
@@ -18,7 +19,7 @@ export class SwapiService {
     this.getPeople();
   }
 
-  getStarShips(page: number = 1) {
+  getStarShips(page = 1) {
     axios
       .get('https://swapi.dev/api/starships/?page=' + page)
       .then((response) => {
@@ -36,7 +37,7 @@ export class SwapiService {
       });
   }
 
-  getPeople(page: number = 1) {
+  getPeople(page = 1) {
     axios
       .get('https://swapi.dev/api/people/?page=' + page)
       .then((response) => {
