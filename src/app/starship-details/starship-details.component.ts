@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router'
 import { SwapiService } from '../swapi.service';
+import { Starship } from '../interfaces';
 
 @Component({
   selector: 'app-starship-details',
@@ -10,6 +11,7 @@ import { SwapiService } from '../swapi.service';
 export class StarshipDetailsComponent implements OnInit{
   routeParams!: ParamMap;
   starshipId: string | null = '';
+  starshipDetails! : Starship;
 
   constructor(private route: ActivatedRoute, private swapiService: SwapiService) { }
   
@@ -22,7 +24,7 @@ export class StarshipDetailsComponent implements OnInit{
   ngOnInit() {
     this.routeParams = this.route.snapshot.paramMap;
     this.starshipId = this.routeParams.get('starshipname');
-    console.log(this.getStarshipDetails(this.starshipId!))
+    this.starshipDetails = this.getStarshipDetails(this.starshipId!)
   }
 
 

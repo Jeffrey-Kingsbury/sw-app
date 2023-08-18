@@ -1,1 +1,27 @@
-<p>starship-details works!</p>
+<div class="wrapper">
+    <div class="container">
+        <div class="header">
+            <h1 class="title">{{starshipDetails.name}}</h1>
+            <h2 class="subtitle">{{starshipDetails.model}}</h2>
+            <p>Class: {{starshipDetails.starship_class}}</p>
+            <p>Manufacturer: {{starshipDetails.manufacturer}}</p>
+            <span>
+                Price: 
+                <p *ngIf="starshipDetails.cost_in_credits !== 'unknown'" class="dgs_font">$</p>
+                {{
+                    starshipDetails.cost_in_credits !== "unknown"
+                    ? (starshipDetails.cost_in_credits | number : "1.0-0")
+                    : starshipDetails.cost_in_credits
+                }}        
+            </span>
+        </div>
+        <p>Lenght: {{starshipDetails.length}} ft.</p>
+        <p>Max Atmosphering Speed: {{starshipDetails.max_atmosphering_speed}} Mph</p>
+        <p>Crew: {{starshipDetails.crew}}</p>
+        <p>Passengers: {{starshipDetails.passengers}}</p>
+        <p>Cargo capacity: {{starshipDetails.cargo_capacity}}L</p>
+        <p>Consumables: {{starshipDetails.consumables}}</p>
+        <p>Hyperdrive rating: {{starshipDetails.hyperdrive_rating}}</p>
+        <p>MGLT: {{starshipDetails.MGLT}}</p>
+    </div>
+</div>
