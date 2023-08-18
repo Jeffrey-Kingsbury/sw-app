@@ -3,6 +3,9 @@
 This project was built with the [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0 and the [Star Wars API](https://swapi.dev/).
 
 
+## Live Demo
+[Click here to view a live demo of this application](https://jeffrey-kingsbury.github.io/sw-app/starships)
+
 
 ## Running this application locally
 To run this application locally you will need to clone this repository or clone a fork of this repository.

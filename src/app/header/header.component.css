@@ -24,6 +24,7 @@
 img {
   max-height: 90%;
   margin: auto;
+  content: url("../../assets/images/star_wars_logo.png");
 }
 
 a {
