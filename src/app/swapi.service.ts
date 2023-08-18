@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { Router } from '@angular/router';
-import { Starship, People } from './interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +20,7 @@ export class SwapiService {
 
   getStarShips(page = 1) {
     axios
-      .get('https://swapi.dev/api/starships/?page=' + page)
+      .get('https://swapi.dev/api/star2hips/?page=' + page)
       .then((response) => {
         this.starships.push(...response.data.results);
         if (response.data.next) {
