@@ -8,6 +8,9 @@ import { LoadingComponent } from './loading/loading.component';
 import { StarshipContainerComponent } from './starship-container/starship-container.component';
 import { HeaderComponent } from './header/header.component';
 import { StarshipsListComponent } from './starships-list/starships-list.component';
+import { PeopleListComponent } from './people-list/people-list.component';
+import { PeopleContainerComponent } from './people-container/people-container.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { StarshipsListComponent } from './starships-list/starships-list.componen
     LoadingComponent,
     StarshipContainerComponent,
     HeaderComponent,
-    StarshipsListComponent
+    StarshipsListComponent,
+    PeopleListComponent,
+    PeopleContainerComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
